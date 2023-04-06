@@ -7,7 +7,7 @@ type ProductCountInPageType = 1|2|3|4|5|6|7|8|9|10;
 export const useProductTableStore = defineStore('productTable', () => {
     const products = ref<IProduct[]>([
         {
-            id: '246016548',
+            id: 1,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -19,7 +19,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '244516548',
+            id: 2,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -31,7 +31,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246216548',
+            id: 3,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -43,7 +43,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '244316548',
+            id: 4,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -55,7 +55,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '247216548',
+            id: 5,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -67,7 +67,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '234316548',
+            id: 6,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -79,7 +79,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '233316548',
+            id: 7,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -91,7 +91,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246016248',
+            id: 8,
             name: 'Навигационная система Pascal',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -103,7 +103,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246011248',
+            id: 9,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -115,7 +115,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '245316248',
+            id: 10,
             name: 'Навигационная система Pascal',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -127,7 +127,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246165648',
+            id: 11,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -139,7 +139,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '24612248',
+            id: 12,
             name: 'Навигационная система Pascal',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -151,7 +151,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246016532',
+            id: 13,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -163,7 +163,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246016212',
+            id: 14,
             name: 'Навигационная система Pascal',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -175,7 +175,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246016248',
+            id: 15,
             name: 'Навигационная система Pascal',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -187,7 +187,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '246416548',
+            id: 16,
             name: 'Навигационная система Pedro',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -199,7 +199,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '../img/cart.png',
         },
         {
-            id: '937295527',
+            id: 17,
             name: 'Настольная игра “На 4-х ногах”',
             category: 'Настольные игры',
             dimension: 'шт',
@@ -212,7 +212,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016549',
+            id: 18,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -224,7 +224,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016550',
+            id: 19,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -236,7 +236,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016551',
+            id: 20,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -248,7 +248,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016552',
+            id: 21,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -260,7 +260,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016553',
+            id: 22,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -272,7 +272,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016554',
+            id: 23,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -284,7 +284,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016555',
+            id: 24,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',
@@ -296,7 +296,7 @@ export const useProductTableStore = defineStore('productTable', () => {
             img: '',
         },
         {
-            id: '246016556',
+            id: 25,
             name: 'Навигационная система Soundmax',
             category: 'Техника для дома',
             dimension: 'шт',

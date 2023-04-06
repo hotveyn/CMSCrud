@@ -1,24 +1,50 @@
 <template>
-    <label class="label-text" for="input" v-if="labelText">
+    <label
+          class="label-text"
+          for="input"
+          v-if="labelText"
+    >
         {{ labelText }}
     </label>
-    <span :class="{'label-mode': labelText}" class="input-wrapper">
+    <span
+          :class="{'label-mode': labelText}"
+          class="input-wrapper"
+    >
       <SearchIcon v-if="isSearch"/>
-      <input class="input" type="text" :placeholder="placeholder" id="input">
+      <input
+            @change="emits('changeInput', $event.target.value)"
+            class="input"
+            :type="type"
+            :placeholder="placeholder"
+            id="input"
+      >
   </span>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 import SearchIcon from '@/components/shared/icons/SearchIcon.vue'
+import {ref} from "vue";
 
 const props = withDefaults(defineProps<{
     labelText?: string,
+    type?: 'text'|'number'
     placeholder?: string,
     isSearch?: boolean
-}>(), {labelText: '', placeholder: '', isSearch: false, });
+}>(), {labelText: '', placeholder: '', isSearch: false,type: 'text'});
+
+const emits = defineEmits<{
+    (e: 'changeInput', val: string): void;
+}>();
+
 </script>
 
-<style scoped lang="scss">
+<style
+    scoped
+    lang="scss"
+>
 .input-wrapper {
   padding: 10px;
   font-style: normal;

@@ -4,22 +4,43 @@
             <h2 class="product-form__title">
                 <slot name="header"/>
             </h2>
-            <CloseIcon class="product-form__cansel"/>
+            <CloseIcon
+                  v-if="modalMode"
+                  @click.self="$emit('hideModal')"
+                  class="product-form__cansel"
+            />
         </div>
         <span class="product-form__underline"></span>
         <form class="product-form__form">
             <div class="left product-form__staff">
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Наименование"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Наименование"
+                          @change-input="(v) => name = v"
+                    />
                 </div>
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Категория"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Категория"
+                          @change-input="(v) => cat = v"
+                    />
                 </div>
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Единицы измерения"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Единицы измерения"
+                          @change-input="(v) => dimension = v"
+                    />
                 </div>
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Дисконт"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Скидка"
+                          type="number"
+                          @change-input="(v) => discount = v"
+                    />
                 </div>
             </div>
             <div class="right product-form__staff">
@@ -27,29 +48,62 @@
                     <BaseTextarea label-text="Описание"/>
                 </div>
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Количество"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Количество"
+                          type="number"
+                          @change-input="(v) => count = v"
+                    />
                 </div>
                 <div class="product-form__input-wrapper">
-                    <BaseInput class="product-form__input" label-text="Цена"/>
+                    <BaseInput
+                          class="product-form__input"
+                          label-text="Цена"
+                          type="number"
+                          @change-input="(v) => price = v"
+                    />
                 </div>
             </div>
         </form>
         <div class="product-form__footer">
             <span class="product-form__total ">Итоговая стоимость: <span class="blue-bold">$123</span></span>
-            <BaseButton :type="'secondary'">Добавить товар</BaseButton>
+            <BaseButton :type="'secondary'">
+                <slot name="button-text"></slot>
+            </BaseButton>
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
+<script
+    setup
+    lang="ts"
+>
 import CloseIcon from "@/components/shared/icons/CloseIcon.vue";
 import BaseInput from "@/components/shared/Inputs/BaseInput.vue";
 import BaseTextarea from "@/components/shared/textarea/BaseTextarea.vue";
 import BaseButton from "@/components/shared/Buttons/BaseButton.vue";
+import {ref} from "vue";
+
+const props = withDefaults(defineProps<{
+    mod?: 'create' | 'update',
+    modalMode?: boolean
+}>(), {mod: 'update', modalMode: false})
+
+const name = ref<string>('');
+const cat = ref<string>('');
+const dimension = ref<string>('');
+const discount = ref<string>('');
+const count = ref<string>('');
+const price = ref<string>('');
+
+const emit = defineEmits(['hideModal']);
 
 </script>
 
-<style scoped lang="scss">
+<style
+    scoped
+    lang="scss"
+>
 .product-form {
   max-width: 580px;
   width: 100%;

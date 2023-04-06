@@ -16,8 +16,12 @@ const productTableStore = useProductTableStore();
 
 <style lang="scss">
 .table-body {
+  align-content: center;
   &__item {
     padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

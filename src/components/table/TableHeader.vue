@@ -10,10 +10,13 @@
         <BaseButton @click="modalVision = true" type="secondary">Добавить товар</BaseButton>
         <Teleport to="body">
             <OpacityTransition>
-                <ModalWrapper @hide-modal="modalVision = false" v-if="modalVision">
-                    <BaseProductForm>
+                <ModalWrapper @hide-modal="modalVision = false" v-if="modalVision" >
+                    <BaseProductForm @hide-modal="modalVision = false" :modal-mode="true">
                         <template #header>
                             <h2>Добавить товар</h2>
+                        </template>
+                        <template #button-text>
+                            Добавить товар
                         </template>
                     </BaseProductForm>
                 </ModalWrapper>
