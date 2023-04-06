@@ -6,7 +6,7 @@
                 Итоговая стоимость: <span class="header__price_bold">${{ productTableStore.totalProductPrice }}</span>
             </p>
         </div>
-        <span class="header__underline"> </span>
+        <span class="header__underline"></span>
     </header>
 </template>
 
@@ -14,8 +14,8 @@
     setup
     lang="ts"
 >
-
 import {useProductTableStore} from "@/stores/productTableStore";
+
 
 const productTableStore = useProductTableStore();
 

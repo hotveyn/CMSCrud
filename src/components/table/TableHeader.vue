@@ -1,34 +1,47 @@
 <template>
-  <div class="table-header">
-    <div class="left">
-      <BaseButton>
-        <FilterIcon/>
-        Фильтр
-      </BaseButton>
-      <BaseInput :is-search="true" placeholder="Поиск по наименованию и категории"/>
+    <div class="table-header">
+        <div class="left">
+            <BaseButton>
+                <FilterIcon/>
+                Фильтр
+            </BaseButton>
+            <BaseInput :is-search="true" placeholder="Поиск по наименованию и категории"/>
+        </div>
+        <BaseButton @click="modalVision = true" type="secondary">Добавить товар</BaseButton>
+        <Teleport to="body">
+            <OpacityTransition>
+                <ModalWrapper @hide-modal="modalVision = false" v-if="modalVision">
+                    <BaseProductForm>
+                        <template #header>
+                            <h2>Добавить товар</h2>
+                        </template>
+                    </BaseProductForm>
+                </ModalWrapper>
+            </OpacityTransition>
+        </Teleport>
     </div>
-    <BaseButton type="secondary">Добавить товар</BaseButton>
-  </div>
-  <div class="table-first-row base-grid">
-    <p class="table-first-row__item">ID</p>
-    <p class="table-first-row__item">Наименование</p>
-    <p class="table-first-row__item">Категория</p>
-    <p class="table-first-row__item">ед/изм</p>
-    <p class="table-first-row__item">Количество</p>
-    <p class="table-first-row__item">цена</p>
-    <p class="table-first-row__item">ИТОГ</p>
-    <div class="table-first-row__item"></div>
-  </div>
+    <div class="table-first-row base-grid">
+        <p class="table-first-row__item">ID</p>
+        <p class="table-first-row__item">Наименование</p>
+        <p class="table-first-row__item">Категория</p>
+        <p class="table-first-row__item">ед/изм</p>
+        <p class="table-first-row__item">Количество</p>
+        <p class="table-first-row__item">цена</p>
+        <p class="table-first-row__item">ИТОГ</p>
+        <div class="table-first-row__item"></div>
+    </div>
 </template>
 
 <script setup lang="ts">
+import ModalWrapper from "@/components/shared/modal/ModalWrapper.vue";
 import BaseButton from '@/components/shared/Buttons/BaseButton.vue'
 import BaseInput from '@/components/shared/Inputs/BaseInput.vue'
 import FilterIcon from '@/components/shared/icons/FilterIcon.vue'
-import ImageIcon from "@/components/shared/icons/ImageIcon.vue";
-import EditIcon from "@/components/shared/icons/EditIcon.vue";
-import TrashIcon from "@/components/shared/icons/TrashIcon.vue";
+import {ref} from "vue";
+import OpacityTransition from "@/components/shared/transitions/OpacityTransition.vue";
+import BaseProductForm from "@/components/shared/forms/BaseProductForm.vue";
 
+let modalVision = ref(false);
 </script>
 
 <style scoped lang="scss">
@@ -60,7 +73,7 @@ import TrashIcon from "@/components/shared/icons/TrashIcon.vue";
   &__item {
     padding: 15px 0;
 
-    &_buttons{
+    &_buttons {
       display: flex;
       align-items: center;
       gap: 20px;

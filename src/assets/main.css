@@ -16,3 +16,9 @@
 .clickable{
     cursor: pointer;
 }
+
+.blue-bold{
+    color: #6D5BD0;
+    font-size: 18px;
+    font-weight: 700;
+}

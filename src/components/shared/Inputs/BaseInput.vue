@@ -1,8 +1,8 @@
 <template>
-  <label class="label-text" for="input" v-if="labelText">
-    {{ labelText }}
-  </label>
-  <span class="input-wrapper">
+    <label class="label-text" for="input" v-if="labelText">
+        {{ labelText }}
+    </label>
+    <span :class="{'label-mode': labelText}" class="input-wrapper">
       <SearchIcon v-if="isSearch"/>
       <input class="input" type="text" :placeholder="placeholder" id="input">
   </span>
@@ -12,10 +12,10 @@
 import SearchIcon from '@/components/shared/icons/SearchIcon.vue'
 
 const props = withDefaults(defineProps<{
-  labelText?: string,
-  placeholder?: string,
-  isSearch?: boolean
-}>(), {labelText: '', placeholder: '', isSearch: false});
+    labelText?: string,
+    placeholder?: string,
+    isSearch?: boolean
+}>(), {labelText: '', placeholder: '', isSearch: false, });
 </script>
 
 <style scoped lang="scss">
@@ -57,6 +57,9 @@ const props = withDefaults(defineProps<{
   letter-spacing: 0.05em;
   color: #6E6893;
   margin-left: 10px;
-  margin-bottom: 5px;
+}
+
+.label-mode {
+  margin-top: 5px;
 }
 </style>
